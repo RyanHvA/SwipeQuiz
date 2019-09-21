@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -39,11 +40,9 @@ class MainActivity : AppCompatActivity() {
                 return false
             }
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                //val position = viewHolder.adapterPosition
-                //questions.removeAt(position)
+                val position = viewHolder.adapterPosition
+                Snackbar.make(rvQuestions, "The correct answer is: " + Question.QUESTION_ANSWERS[position], Snackbar.LENGTH_SHORT).show()
                 questionAdapter.notifyDataSetChanged()
-
-                //TODO add swipe left and right listeners
             }
         }
         return ItemTouchHelper(callback)

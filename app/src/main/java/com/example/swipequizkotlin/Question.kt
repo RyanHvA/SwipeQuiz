@@ -1,10 +1,8 @@
 package com.example.swipequizkotlin
 
-import java.lang.Boolean.*
-
 data class Question(
     var questions: String,
-    var answers: Boolean
+    var answers: String
 ) {
     companion object {
         val QUESTIONS = arrayOf(
@@ -14,12 +12,11 @@ data class Question(
             "In Kotlin 'when' replaces the 'switch' operator in Java."
         )
 
-        // 1 = TRUE | 0 = FALSE
-        val QUESTION_ANSWERS = booleanArrayOf(
-            FALSE,
-            FALSE,
-            TRUE,
-            TRUE
+        val QUESTION_ANSWERS = arrayOf(
+            "false",
+            "false",
+            "true",
+            "true"
         )
     }
 }
